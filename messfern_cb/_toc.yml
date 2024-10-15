@@ -4,10 +4,10 @@
 format: jb-book
 root: intro
 parts: 
-#- caption: Exercises
-#  chapters:
+- caption: Exercises
+  chapters:
 #  - file: exercise/exercise-git
-#  - file: exercise/exercise-python
+  - file: exercise/exercise-python
 #  - file: exercise/exercise-cnv
 #  - file: exercise/exercise-tseries
 #  - file: exercise/exercise-filter
@@ -27,7 +27,7 @@ parts:
 #  - file: resource/glossary
 
 - caption: ~about this site~
-- chapters:
+  chapters:
   - file: build-the-book/getting-started
     sections:
     - file: build-the-book/jupyter-book

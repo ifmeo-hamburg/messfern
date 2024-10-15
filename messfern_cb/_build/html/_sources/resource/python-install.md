@@ -6,7 +6,7 @@ Based on instructions from Leo Borchert.
 
 Here, I guide through the installation of the Python distribution conda (similar to mamba, micromamba, etc) and set up jupyter notebook. Once conda is installed, various useful software packages can be added. Let me know if you run into trouble with any of this.
 
-# For Linux users:
+## For Linux users:
 ### STEP 1		
 Download miniconda installer from:
   https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html 
