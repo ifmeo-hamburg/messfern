@@ -17,7 +17,7 @@ parts:
 #  - file: exercise/exercise-ctd-align
 #  - file: exercise/exercise-glider-demo
 
-- caption: Resources
+- caption: Getting started
   chapters:
 #  - file: resource/books
 #  - file: resource/git
@@ -26,6 +26,7 @@ parts:
   - file: resource/running-python
 #  - file: resource/glossary
 
+- caption: ~about this site~
 - chapters:
   - file: build-the-book/getting-started
     sections:
