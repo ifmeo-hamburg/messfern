@@ -37,7 +37,8 @@ The basic command is something like `conda create --name <my-env>`  where you re
 
 ### Create and then activate an environment `messfern_env`
 ```
-conda create --channel conda-forge --name messfern_env xarray gsw python pandas gsw numpy scipy cartopy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels 
+conda create --name messfern_env 
+conda install --channel conda-forge xarray gsw python pandas gsw numpy scipy cartopy matplotlib jupyterlab nb_conda ipykernel nb_conda_kernels 
 conda activate messfern_env
 ```
 <!--
