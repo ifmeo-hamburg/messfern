@@ -1,4 +1,4 @@
-# Exercise 1 - Python
+# Exercise 1 - Plot profiles in python
 
 
 **Aim:** The purpose of this exercise is to get python running.
