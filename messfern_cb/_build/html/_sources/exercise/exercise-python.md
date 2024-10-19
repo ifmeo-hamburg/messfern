@@ -1,130 +1,113 @@
-# Exercise 0 - Python
+# Exercise 1 - Python
 
 
 **Aim:** The purpose of this exercise is to get python running.
 
-**Context:** For this course, you can work with python either on your own computer on the university computers.  Note, at this point, instructions are not yet verified for using python on the university computers.
+**Context:** For this course, you can work with python either on your own computer, on the university computers or on Github Codespaces.  (Note, at this point, instructions are not yet verified for using python on the university computers which have recently removed `anaconda`.)
 
 **Goals:** At the end of this exercise, you will be able to
 
 - Run python with jupyter notebooks 
-- (Optional) Run jupyter-lab
-- (Optional) Create and use `conda` to manage environments
-- Install python packages (e.g., `gsw`, `pandas`, `xarray`)
-
+- Load a netCDF (`*.nc`) file with CTD data
+- Plot a profile of temperature and salinity
 
 <hr>
 
-## Step 0: Create a working folder for this class
+## Step 1: Github.com
 
-Create a folder somewhere on your computer where you'll work on python for this class.  Name it something that you can remember.  Save your work (jupyter notebooks) in this location.
+Access the Github Classroom for this course using the link you received in Stine.
 
-Within this folder, create a text file named `readme.md` to record the steps you take to get python installed and to start jupyter.
+Click the link to start the assignment.  Here, you may need to create a github account if you don't already have one, or will link your account to your name.
 
-## Step 1: Check whether you have python installed
+## Step 2: Choose where to work on the assignment
 
-In Mac or Linux, at the command line, type
-```
-python --version
-```
+### Option 1: Github codespaces
 
-For example, mine says
-```
-(base) 9:34 ~ $ python --version
-Python 3.9.5
-```
+Getting started with this option.
 
-If it's not installed, see: [Python installation](../resource/python-install).
+For this option, you will want to start Github codespace within the assignment you've accepted.
 
-Once you verify that python is installed, you have two options for moving forward:
-- Get jupyter running on your computer.
-- (Optional) Environment management with conda (and jupyter lab) [below](#slightly-more-advanced-step-2-setting-up-a-conda-environment)
-*Either* option is acceptable for this course.
+**First step:** Commit any changes to the repository.
+
+**Second step:** Follow the steps below to run and edit the code.
 
 
-```{seealso}
-- [Jupyter notebook v Jupyter lab (external)](https://saturncloud.io/blog/what-is-the-difference-between-jupyter-notebook-and-jupyterlab/#:~:text=If%20you%20are%20already%20familiar,is%20the%20way%20to%20go.)
-```
+- Navigate to the python notebook example within `src/`.  
+- At the right, choose the kernel.  It may say 'python' or 'kernel'.
+- In the center dropdown, choose "select another kernel"
+- Choose "python environments"
+- Choose "create a python environment"
+- Choose "Conda creates a `.conda` environment in the current workspace"
+- Select the version of python to install: python 3.9. **The first time will take a while since it will try to install packages that you need. Watch the "Go To" button at the top, or the pop up windows in the bottom right.  Check for errors and follow instructions.**
+- Try the "Run all" button at the top.  This will throw an error about missing packages. 
+- In the terminal window at the bottom of the page, click terminal, and then install the packages.  This can be done one by one or all together, e.g.,
+    conda install -c conda-forge matplotlib
+    conda install -c conda-forge xarray
+or
+    conda install -c conda-forge matplotlib xarray gsw numpy
+etc
 
+Note that the option `-c conda-forge` tells the installer to look for the packages on the `conda-forge` (which is needed especially for the gibbs seawater toolbox, `gsw`.)
+- In the terminal window, install the package ctd-tools
+    pip install ctd-tools
+- Try running the code again
 
-## Step 2: Conda environment 
-
-Conda environments are a way to manage different installations of packages for different projects.  This can help avoid incompatibilities between various packages (but which aren't all needed for a piece of code), or to specify which version of python you were running when you wrote some code, so that 10 years down the line if it doesn't work with the most modern python, you have a chance of reverting to an earlier version.
-
-Start by reading the basics about [conda environments (external link)](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/02-working-with-environments/index.html#:~:text=Key%20Points-,A%20Conda%20environment%20is%20a%20directory%20that%20contains%20a%20specific,activate%20(%20conda%20deactivate%20)%20commands.).  
-
-```{note}
-Key points from the link above:
-- A Conda environment is a directory that contains a specific collection of Conda packages that you have installed.
-- You create (remove) a new environment using the `conda create` (`conda remove`) commands.
-- You activate (deactivate) an environment using the `conda activate` (`conda deactivate`) commands.
-- You install packages into environments using `conda install`; you install packages into an *active* environment using `pip install`.
-- You should install each environment as a sub-directory inside its corresponding project directory
-- Use the `conda env list` command to list existing environments and their respective locations.
-- Use the `conda list` command to list all of the packages installed in an environment.
+```{tip}
+Note: If you get the error 
+    notebook controller is DISPOSED. 
+    View Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details.
+when clicking `Run all`, try again but running one cell at a time.
 ```
 
-- For Mac users, you will probably want `conda` and `pip` installed on your computer.
+### Option 2: Work on the assignment on your own computer.
 
-You can get conda here: [https://conda.io/projects/conda/en/latest/user-guide/install/index.html](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).  I would recommend *miniconda* (Here is the direct link for [installing miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)).  If you already have Anaconda, that is fine too.
+Getting started with this option.
 
-- To create an environment to use for the work in this course, use the `conda create` command as in 
-[Python packages](../resource/python-packages).
-<!--conda create --channel conda-forge --name seaocn_env xarray python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels pygmt cartopy scipy cmocean erddapy argopy tqdm-->
-Note that it can be advantages to install all your packages at once since `conda` (or `mamba`) need to cross-check packages for compatibility upon installation.
+Copy the code to your local computer.  There should be a 'download' or a 'clone' option.  Save it to the directory you'd like to work in.
 
-- Then activate the environment:
-```
-conda activate messfern_env
-```
+- Activate your conda environment (exact steps depend on how you'll use python: e.g., pycharm, spyder, anaconda)
+- Start an editor and open the example notebook within `src/`
+- Select the kernal with your packages/environment installed
+- Try running the code (normally a "run" button at the top, or to the left of each cell)
 
-## Step 3: Get Jupyter running
+## Step 3: Start editing the code
 
-- Install either [jupyterlab or jupyternotebook](https://docs.jupyter.org/en/latest/#where-do-i-start).
+- Read each cell and follow the instructions.  
+    - For Markdown cells, these contain information about the preceding or following cells and use [Markdown](https://www.markdownguide.org) to format.  Hashtags are used for headers, and dashes for list items.  To **bold** text, surround the text to be bolded with two asterisks (*) on each side.  For *italic* text, use one.
+    - For code cells, try to figure out what it's doing.  Python is a programming language (like Matlab or Julia) which allows you to send a set of instructions to the computer, and to have it manipulate and display data to the screen.
+        - Syntax matters.  Missing punctuation, change in capitalisation, the wrong kinds of brackets or the wrong indentation all matter.
+        - Rather than having you code from scratch to start with (e.g., demonstrating how arithmatic works in Python) we are going to use sample code for you to edit.  The disadvantage is that you may not realise how many choices about punctuation and indentation are being made for you.  The advantage is that you can get to using Python for 'real stuff' quicker.  But be aware that you will have gaps in your basic understanding.  
 
-```{note}
-If you already have Anaconda, then jupyter lab comes by default as [explained here](https://test-jupyter.readthedocs.io/en/latest/install.html).
-```
+- In the first cell (Exercise 1: Profile data), update the text to be your name and date.  You may need to double-click the cell in order to edit.
 
-- Get Jupyter running on your computer.  The specific steps will depend on how it's been installed.  See instructions [here (external)](https://docs.jupyter.org/en/latest/running.html).  
+- In the next cell, you are importing packages to python.  You likely do not need to edit this, but note that each package name is imported using the command `import` which then makes the package contents "known" to your python code.
 
-- Record the steps you need to take to start jupyter!   **Specifically, put these steps into a `readme.md` within your working folder.**.
+- In the third cell (# Input file paths), the lines starting with a hash indicate that this is a comment.  Python will not try to execute this line but will instead skip it.  Comments are for the reader/programmer to explain what is happening in the code.  Use them often!
 
+This cell tells python where various files are located, and saves the text string with that location to a variable name, e.g., `cnv_file_with_path`.  That way, you don't have to type the long string with the location multiple times.
 
-## Step 4: Create a new python notebook
+- The next section is titled "Transforming to xarray".  This reads the data from the native format provided by the manufacturer (in the case, Seabird Electronics, Inc) and converts it into a netCDF file (a common data format used in oceanography and climate science) using a package written by a UHH student Yves Sorge.
 
-- Create a new  notebook following the file-naming convention.
+- The section "Open file and show contents" then reads this netCDF data into a data type within Python called an `xarray` dataset.  This data type is enabled by you having loaded the `xarray` package a few cells above, and has the advantage of reading netCDF files easily, and preserving the information contained within the file (which includes data variables, meta data).  The `xarray` package also has useful features for working with e.g., 1-, 2-, 3-, and 4-dimensional datasets, especially ones which use time as an index.
 
-```{admonition} Naming convention: Zeroeth notebook
-Name your notebook following the convention `Ex<A>-<Lastname>-messfern.ipynb` where you replace the `<A>` with the exercise number (or number/letter combo), and `<Lastname>` with your lastname.
-```
+Note the line: `print(ctd_ds.info)` which prints to the screen some fo the data contained within the `xarray` dataset which we've named here as `ctd_ds`.
 
-- Within this notebook, create a first cell to import the packages we'll be using during this course.  This starter example should have:
+The code below goes through some basic plotting routines.  **Your task** is to edit this code according to the instructions, to get familiar with the `matplotlib` package.  To figure out how to do this, refer to the [Matplotlib website](https://matplotlib.org/stable/gallery/index) and use internet searches or your colleagues.
 
-```{code}
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import xarray as xr
-import gsw
-import pycnv
-```
+## Step 4: Edit the readme file
 
-If any of these packages fail to run, then first *check which kernel you're using*. You want to use the kernel corresponding to the conda environment you created, `messfern_env`.  This should be available from where you can edit the python notebook, as a dropdown menu in the upper right corner.  Or revisit your installations, or [python packages](../resource/python-packages) for tips on how to install them.
+Within your Github Classroom workspace, you'll find a file called `README.md`.  Open this file in a text editor (or code editor) of your choice.  It's written in markdown.  Follow the instructions within the file to update the file with your project name, notes to yourself on how you ran the code, and any further information as required.
 
+## Step 5: Submit the code on the Github classroom 
 
-- Now add a cell above your `import` cell, and change the format of the cell from "code" to "markdown".  Within this markdown cell, add some text, for example:
+Navigate to your repository on Github.com.  
 
-```{code}
-# My Messfern python notebook
+If you're using Github codespace, 
 
-- Author: <My name>
-- Purpose: Verify package installation
-- Date: <Today's date>
+- In the left bar, find the circles connected by lines and click it.  
+- For each of the changes noted, click the plus (+) symbol to 'stage' them for a commit.  
+- Add a short note at the top saying what you've changed.
+- Click "commit"
+- Click "Sync changes"
 
-This **worked**!  But *not sure* what to do next.
-
-<hr>
-```
-
-After adding text to the cell, run it as you would a python code cell.  Note that running the cell changes the formatting based on the markdown formatting commands you've provided.
+Committing your repository is how you submit the assignment.

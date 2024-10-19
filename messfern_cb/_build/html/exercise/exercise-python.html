@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 0 - Python &#8212; messfern-cb</title>
+    <title>Exercise 1 - Python &#8212; messfern-cb</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,7 +181,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 0 - Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1 - Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="nav bd-sidenav">
@@ -383,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 0 - Python</h1>
+    <h1>Exercise 1 - Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,10 +393,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-whether-you-have-python-installed">Step 1: Check whether you have python installed</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-conda-environment">Step 2: Conda environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-get-jupyter-running">Step 3: Get Jupyter running</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-a-new-python-notebook">Step 4: Create a new python notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-choose-where-to-work-on-the-assignment">Step 2: Choose where to work on the assignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-github-codespaces">Option 1: Github codespaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-work-on-the-assignment-on-your-own-computer">Option 2: Work on the assignment on your own computer.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-start-editing-the-code">Step 3: Start editing the code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-edit-the-readme-file">Step 4: Edit the readme file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-submit-the-code-on-the-github-classroom">Step 5: Submit the code on the Github classroom</a></li>
 </ul>
             </nav>
         </div>
@@ -408,130 +412,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-0-python">
-<h1>Exercise 0 - Python<a class="headerlink" href="#exercise-0-python" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-python">
+<h1>Exercise 1 - Python<a class="headerlink" href="#exercise-1-python" title="Link to this heading">#</a></h1>
 <p><strong>Aim:</strong> The purpose of this exercise is to get python running.</p>
-<p><strong>Context:</strong> For this course, you can work with python either on your own computer on the university computers.  Note, at this point, instructions are not yet verified for using python on the university computers.</p>
+<p><strong>Context:</strong> For this course, you can work with python either on your own computer, on the university computers or on Github Codespaces.  (Note, at this point, instructions are not yet verified for using python on the university computers which have recently removed <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>.)</p>
 <p><strong>Goals:</strong> At the end of this exercise, you will be able to</p>
 <ul class="simple">
 <li><p>Run python with jupyter notebooks</p></li>
-<li><p>(Optional) Run jupyter-lab</p></li>
-<li><p>(Optional) Create and use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage environments</p></li>
-<li><p>Install python packages (e.g., <code class="docutils literal notranslate"><span class="pre">gsw</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">xarray</span></code>)</p></li>
+<li><p>Load a netCDF (<code class="docutils literal notranslate"><span class="pre">*.nc</span></code>) file with CTD data</p></li>
+<li><p>Plot a profile of temperature and salinity</p></li>
 </ul>
 <hr>
-<p>## Step 0: Create a working folder for this class</p>
-<p>Create a folder somewhere on your computer where you’ll work on python for this class.  Name it something that you can remember.  Save your work (jupyter notebooks) in this location.</p>
-<p>Within this folder, create a text file named <code class="docutils literal notranslate"><span class="pre">readme.md</span></code> to record the steps you take to get python installed and to start jupyter.</p>
-<section id="step-1-check-whether-you-have-python-installed">
-<h2>Step 1: Check whether you have python installed<a class="headerlink" href="#step-1-check-whether-you-have-python-installed" title="Link to this heading">#</a></h2>
-<p>In Mac or Linux, at the command line, type</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p>For example, mine says</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) 9:34 ~ $ python --version
-Python 3.9.5
-</pre></div>
-</div>
-<p>If it’s not installed, see: <a class="reference internal" href="../resource/python-install.html"><span class="doc std std-doc">Python installation</span></a>.</p>
-<p>Once you verify that python is installed, you have two options for moving forward:</p>
+<p>## Step 1: <a class="reference external" href="http://Github.com">Github.com</a></p>
+<p>Access the Github Classroom for this course using the link you received in Stine.</p>
+<p>Click the link to start the assignment.  Here, you may need to create a github account if you don’t already have one, or will link your account to your name.</p>
+<section id="step-2-choose-where-to-work-on-the-assignment">
+<h2>Step 2: Choose where to work on the assignment<a class="headerlink" href="#step-2-choose-where-to-work-on-the-assignment" title="Link to this heading">#</a></h2>
+<section id="option-1-github-codespaces">
+<h3>Option 1: Github codespaces<a class="headerlink" href="#option-1-github-codespaces" title="Link to this heading">#</a></h3>
+<p>Getting started with this option.</p>
+<p>For this option, you will want to start Github codespace within the assignment you’ve accepted.</p>
+<p><strong>First step:</strong> Commit any changes to the repository.</p>
+<p><strong>Second step:</strong> Follow the steps below to run and edit the code.</p>
 <ul class="simple">
-<li><p>Get jupyter running on your computer.</p></li>
-<li><p>(Optional) Environment management with conda (and jupyter lab) <a class="reference internal" href="#slightly-more-advanced-step-2-setting-up-a-conda-environment"><span class="xref myst">below</span></a>
-<em>Either</em> option is acceptable for this course.</p></li>
+<li><p>Navigate to the python notebook example within <code class="docutils literal notranslate"><span class="pre">src/</span></code>.</p></li>
+<li><p>At the right, choose the kernel.  It may say ‘python’ or ‘kernel’.</p></li>
+<li><p>In the center dropdown, choose “select another kernel”</p></li>
+<li><p>Choose “python environments”</p></li>
+<li><p>Choose “create a python environment”</p></li>
+<li><p>Choose “Conda creates a <code class="docutils literal notranslate"><span class="pre">.conda</span></code> environment in the current workspace”</p></li>
+<li><p>Select the version of python to install: python 3.9. <strong>The first time will take a while since it will try to install packages that you need. Watch the “Go To” button at the top, or the pop up windows in the bottom right.  Check for errors and follow instructions.</strong></p></li>
+<li><p>Try the “Run all” button at the top.  This will throw an error about missing packages.</p></li>
+<li><p>In the terminal window at the bottom of the page, click terminal, and then install the packages.  This can be done one by one or all together, e.g.,
+conda install -c conda-forge matplotlib
+conda install -c conda-forge xarray
+or
+conda install -c conda-forge matplotlib xarray gsw numpy
+etc</p></li>
 </ul>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
+<p>Note that the option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">conda-forge</span></code> tells the installer to look for the packages on the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> (which is needed especially for the gibbs seawater toolbox, <code class="docutils literal notranslate"><span class="pre">gsw</span></code>.)</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://saturncloud.io/blog/what-is-the-difference-between-jupyter-notebook-and-jupyterlab/#:~:text=If%20you%20are%20already%20familiar,is%20the%20way%20to%20go.">Jupyter notebook v Jupyter lab (external)</a></p></li>
+<li><p>In the terminal window, install the package ctd-tools
+pip install ctd-tools</p></li>
+<li><p>Try running the code again</p></li>
 </ul>
-</div>
-</section>
-<section id="step-2-conda-environment">
-<h2>Step 2: Conda environment<a class="headerlink" href="#step-2-conda-environment" title="Link to this heading">#</a></h2>
-<p>Conda environments are a way to manage different installations of packages for different projects.  This can help avoid incompatibilities between various packages (but which aren’t all needed for a piece of code), or to specify which version of python you were running when you wrote some code, so that 10 years down the line if it doesn’t work with the most modern python, you have a chance of reverting to an earlier version.</p>
-<p>Start by reading the basics about <a class="reference external" href="https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/02-working-with-environments/index.html#:~:text=Key%20Points-,A%20Conda%20environment%20is%20a%20directory%20that%20contains%20a%20specific,activate%20(%20conda%20deactivate%20)%20commands.">conda environments (external link)</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Key points from the link above:</p>
-<ul class="simple">
-<li><p>A Conda environment is a directory that contains a specific collection of Conda packages that you have installed.</p></li>
-<li><p>You create (remove) a new environment using the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code> (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">remove</span></code>) commands.</p></li>
-<li><p>You activate (deactivate) an environment using the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>) commands.</p></li>
-<li><p>You install packages into environments using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>; you install packages into an <em>active</em> environment using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>.</p></li>
-<li><p>You should install each environment as a sub-directory inside its corresponding project directory</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> command to list existing environments and their respective locations.</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> command to list all of the packages installed in an environment.</p></li>
-</ul>
-</div>
-<ul class="simple">
-<li><p>For Mac users, you will probably want <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> installed on your computer.</p></li>
-</ul>
-<p>You can get conda here: <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">https://conda.io/projects/conda/en/latest/user-guide/install/index.html</a>.  I would recommend <em>miniconda</em> (Here is the direct link for <a class="reference external" href="https://docs.anaconda.com/free/miniconda/miniconda-install/">installing miniconda</a>).  If you already have Anaconda, that is fine too.</p>
-<ul class="simple">
-<li><p>To create an environment to use for the work in this course, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code> command as in
-<a class="reference internal" href="../resource/python-packages.html"><span class="doc std std-doc">Python packages</span></a>.</p></li>
-</ul>
-<!--conda create --channel conda-forge --name seaocn_env xarray python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels pygmt cartopy scipy cmocean erddapy argopy tqdm-->
-<p>Note that it can be advantages to install all your packages at once since <code class="docutils literal notranslate"><span class="pre">conda</span></code> (or <code class="docutils literal notranslate"><span class="pre">mamba</span></code>) need to cross-check packages for compatibility upon installation.</p>
-<ul class="simple">
-<li><p>Then activate the environment:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">messfern_env</span>
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note: If you get the error
+notebook controller is DISPOSED.
+View Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details.
+when clicking <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">all</span></code>, try again but running one cell at a time.</p>
 </div>
 </section>
-<section id="step-3-get-jupyter-running">
-<h2>Step 3: Get Jupyter running<a class="headerlink" href="#step-3-get-jupyter-running" title="Link to this heading">#</a></h2>
+<section id="option-2-work-on-the-assignment-on-your-own-computer">
+<h3>Option 2: Work on the assignment on your own computer.<a class="headerlink" href="#option-2-work-on-the-assignment-on-your-own-computer" title="Link to this heading">#</a></h3>
+<p>Getting started with this option.</p>
+<p>Copy the code to your local computer.  There should be a ‘download’ or a ‘clone’ option.  Save it to the directory you’d like to work in.</p>
 <ul class="simple">
-<li><p>Install either <a class="reference external" href="https://docs.jupyter.org/en/latest/#where-do-i-start">jupyterlab or jupyternotebook</a>.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you already have Anaconda, then jupyter lab comes by default as <a class="reference external" href="https://test-jupyter.readthedocs.io/en/latest/install.html">explained here</a>.</p>
-</div>
-<ul class="simple">
-<li><p>Get Jupyter running on your computer.  The specific steps will depend on how it’s been installed.  See instructions <a class="reference external" href="https://docs.jupyter.org/en/latest/running.html">here (external)</a>.</p></li>
-<li><p>Record the steps you need to take to start jupyter!   <strong>Specifically, put these steps into a <code class="docutils literal notranslate"><span class="pre">readme.md</span></code> within your working folder.</strong>.</p></li>
+<li><p>Activate your conda environment (exact steps depend on how you’ll use python: e.g., pycharm, spyder, anaconda)</p></li>
+<li><p>Start an editor and open the example notebook within <code class="docutils literal notranslate"><span class="pre">src/</span></code></p></li>
+<li><p>Select the kernal with your packages/environment installed</p></li>
+<li><p>Try running the code (normally a “run” button at the top, or to the left of each cell)</p></li>
 </ul>
 </section>
-<section id="step-4-create-a-new-python-notebook">
-<h2>Step 4: Create a new python notebook<a class="headerlink" href="#step-4-create-a-new-python-notebook" title="Link to this heading">#</a></h2>
+</section>
+<section id="step-3-start-editing-the-code">
+<h2>Step 3: Start editing the code<a class="headerlink" href="#step-3-start-editing-the-code" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Create a new  notebook following the file-naming convention.</p></li>
+<li><p>Read each cell and follow the instructions.</p>
+<ul>
+<li><p>For Markdown cells, these contain information about the preceding or following cells and use <a class="reference external" href="https://www.markdownguide.org">Markdown</a> to format.  Hashtags are used for headers, and dashes for list items.  To <strong>bold</strong> text, surround the text to be bolded with two asterisks (*) on each side.  For <em>italic</em> text, use one.</p></li>
+<li><p>For code cells, try to figure out what it’s doing.  Python is a programming language (like Matlab or Julia) which allows you to send a set of instructions to the computer, and to have it manipulate and display data to the screen.</p>
+<ul>
+<li><p>Syntax matters.  Missing punctuation, change in capitalisation, the wrong kinds of brackets or the wrong indentation all matter.</p></li>
+<li><p>Rather than having you code from scratch to start with (e.g., demonstrating how arithmatic works in Python) we are going to use sample code for you to edit.  The disadvantage is that you may not realise how many choices about punctuation and indentation are being made for you.  The advantage is that you can get to using Python for ‘real stuff’ quicker.  But be aware that you will have gaps in your basic understanding.</p></li>
 </ul>
-<div class="admonition-naming-convention-zeroeth-notebook admonition">
-<p class="admonition-title">Naming convention: Zeroeth notebook</p>
-<p>Name your notebook following the convention <code class="docutils literal notranslate"><span class="pre">Ex&lt;A&gt;-&lt;Lastname&gt;-messfern.ipynb</span></code> where you replace the <code class="docutils literal notranslate"><span class="pre">&lt;A&gt;</span></code> with the exercise number (or number/letter combo), and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your lastname.</p>
-</div>
+</li>
+</ul>
+</li>
+<li><p>In the first cell (Exercise 1: Profile data), update the text to be your name and date.  You may need to double-click the cell in order to edit.</p></li>
+<li><p>In the next cell, you are importing packages to python.  You likely do not need to edit this, but note that each package name is imported using the command <code class="docutils literal notranslate"><span class="pre">import</span></code> which then makes the package contents “known” to your python code.</p></li>
+<li><p>In the third cell (# Input file paths), the lines starting with a hash indicate that this is a comment.  Python will not try to execute this line but will instead skip it.  Comments are for the reader/programmer to explain what is happening in the code.  Use them often!</p></li>
+</ul>
+<p>This cell tells python where various files are located, and saves the text string with that location to a variable name, e.g., <code class="docutils literal notranslate"><span class="pre">cnv_file_with_path</span></code>.  That way, you don’t have to type the long string with the location multiple times.</p>
 <ul class="simple">
-<li><p>Within this notebook, create a first cell to import the packages we’ll be using during this course.  This starter example should have:</p></li>
+<li><p>The next section is titled “Transforming to xarray”.  This reads the data from the native format provided by the manufacturer (in the case, Seabird Electronics, Inc) and converts it into a netCDF file (a common data format used in oceanography and climate science) using a package written by a UHH student Yves Sorge.</p></li>
+<li><p>The section “Open file and show contents” then reads this netCDF data into a data type within Python called an <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataset.  This data type is enabled by you having loaded the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package a few cells above, and has the advantage of reading netCDF files easily, and preserving the information contained within the file (which includes data variables, meta data).  The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package also has useful features for working with e.g., 1-, 2-, 3-, and 4-dimensional datasets, especially ones which use time as an index.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">gsw</span>
-<span class="kn">import</span> <span class="nn">pycnv</span>
-</pre></div>
-</div>
-<p>If any of these packages fail to run, then first <em>check which kernel you’re using</em>. You want to use the kernel corresponding to the conda environment you created, <code class="docutils literal notranslate"><span class="pre">messfern_env</span></code>.  This should be available from where you can edit the python notebook, as a dropdown menu in the upper right corner.  Or revisit your installations, or <a class="reference internal" href="../resource/python-packages.html"><span class="doc std std-doc">python packages</span></a> for tips on how to install them.</p>
+<p>Note the line: <code class="docutils literal notranslate"><span class="pre">print(ctd_ds.info)</span></code> which prints to the screen some fo the data contained within the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataset which we’ve named here as <code class="docutils literal notranslate"><span class="pre">ctd_ds</span></code>.</p>
+<p>The code below goes through some basic plotting routines.  <strong>Your task</strong> is to edit this code according to the instructions, to get familiar with the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package.  To figure out how to do this, refer to the <a class="reference external" href="https://matplotlib.org/stable/gallery/index">Matplotlib website</a> and use internet searches or your colleagues.</p>
+</section>
+<section id="step-4-edit-the-readme-file">
+<h2>Step 4: Edit the readme file<a class="headerlink" href="#step-4-edit-the-readme-file" title="Link to this heading">#</a></h2>
+<p>Within your Github Classroom workspace, you’ll find a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.  Open this file in a text editor (or code editor) of your choice.  It’s written in markdown.  Follow the instructions within the file to update the file with your project name, notes to yourself on how you ran the code, and any further information as required.</p>
+</section>
+<section id="step-5-submit-the-code-on-the-github-classroom">
+<h2>Step 5: Submit the code on the Github classroom<a class="headerlink" href="#step-5-submit-the-code-on-the-github-classroom" title="Link to this heading">#</a></h2>
+<p>Navigate to your repository on <a class="reference external" href="http://Github.com">Github.com</a>.</p>
+<p>If you’re using Github codespace,</p>
 <ul class="simple">
-<li><p>Now add a cell above your <code class="docutils literal notranslate"><span class="pre">import</span></code> cell, and change the format of the cell from “code” to “markdown”.  Within this markdown cell, add some text, for example:</p></li>
+<li><p>In the left bar, find the circles connected by lines and click it.</p></li>
+<li><p>For each of the changes noted, click the plus (+) symbol to ‘stage’ them for a commit.</p></li>
+<li><p>Add a short note at the top saying what you’ve changed.</p></li>
+<li><p>Click “commit”</p></li>
+<li><p>Click “Sync changes”</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># My Messfern python notebook
-
-- Author: &lt;My name&gt;
-- Purpose: Verify package installation
-- Date: &lt;Today&#39;s date&gt;
-
-This **worked**!  But *not sure* what to do next.
-
-&lt;hr&gt;
-</pre></div>
-</div>
-<p>After adding text to the cell, run it as you would a python code cell.  Note that running the cell changes the formatting based on the markdown formatting commands you’ve provided.</p>
+<p>Committing your repository is how you submit the assignment.</p>
 </section>
 </section>
 
@@ -599,10 +585,14 @@ This **worked**!  But *not sure* what to do next.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-check-whether-you-have-python-installed">Step 1: Check whether you have python installed</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-conda-environment">Step 2: Conda environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-get-jupyter-running">Step 3: Get Jupyter running</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-create-a-new-python-notebook">Step 4: Create a new python notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-choose-where-to-work-on-the-assignment">Step 2: Choose where to work on the assignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-github-codespaces">Option 1: Github codespaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-work-on-the-assignment-on-your-own-computer">Option 2: Work on the assignment on your own computer.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-start-editing-the-code">Step 3: Start editing the code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-edit-the-readme-file">Step 4: Edit the readme file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-submit-the-code-on-the-github-classroom">Step 5: Submit the code on the Github classroom</a></li>
 </ul>
   </nav></div>
 
