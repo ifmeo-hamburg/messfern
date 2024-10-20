@@ -1,4 +1,4 @@
-# Exercise 1 - Python
+# Exercise 1 - Plot profiles in python
 
 
 **Aim:** The purpose of this exercise is to get python running.
@@ -13,7 +13,7 @@
 
 <hr>
 
-## Step 1: Github.com
+## Step 1: Github.com
 
 Access the Github Classroom for this course using the link you received in Stine.
 
