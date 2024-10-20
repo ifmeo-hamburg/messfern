@@ -21,7 +21,22 @@ Click the link to start the assignment.  Here, you may need to create a github a
 
 ## Step 2: Choose where to work on the assignment
 
-### Option 1: Github codespaces
+
+
+### Option 1: Work on the assignment on your own computer.
+
+Getting started with this option.
+
+Copy the code from [https://github.com/eleanorfrajka/messfern-plot-profiles](https://github.com/eleanorfrajka/messfern-plot-profiles) to your local computer.  There should be a 'download' option if you click the green button that says "<> Code".  Save it to the directory you'd like to work in.
+
+*Advanced:* Instead of copying the code, clone it using Github or git, which will create it as a git repository on your computer.
+
+- Activate your conda environment (exact steps depend on how you'll use python: e.g., pycharm, spyder, anaconda)
+- Start an editor and open the example notebook within `src/`
+- Select the kernal with your packages/environment installed
+- Try running the code (normally a "run" button at the top, or to the left of each cell)
+
+### Option 2: Github codespaces
 
 Getting started with this option.
 
@@ -58,17 +73,6 @@ Note: If you get the error
     View Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details.
 when clicking `Run all`, try again but running one cell at a time.
 ```
-
-### Option 2: Work on the assignment on your own computer.
-
-Getting started with this option.
-
-Copy the code to your local computer.  There should be a 'download' or a 'clone' option.  Save it to the directory you'd like to work in.
-
-- Activate your conda environment (exact steps depend on how you'll use python: e.g., pycharm, spyder, anaconda)
-- Start an editor and open the example notebook within `src/`
-- Select the kernal with your packages/environment installed
-- Try running the code (normally a "run" button at the top, or to the left of each cell)
 
 ## Step 3: Start editing the code
 
