@@ -111,6 +111,8 @@ To work through this exercise:
 
 Within your Github Classroom workspace, you'll find a file called `README.md`.  Open this file in a text editor (or code editor) of your choice.  It's written in markdown.  Follow the instructions within the file to update the file with your project name, notes to yourself on how you ran the code, and any further information as required.
 
+For the purposes of this exercise, the `README.md` file serves as a coversheet for the work.
+
 ## Step 5: Submit the code on the Github classroom 
 
 Navigate to your repository on Github.com.  
@@ -123,4 +125,4 @@ If you're using Github codespace,
 - Click "commit"
 - Click "Sync changes"
 
-Committing your repository is how you submit the assignment.
+Committing your repository is how you submit the exercise.  

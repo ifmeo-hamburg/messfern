@@ -8,6 +8,7 @@ parts:
   chapters:
 #  - file: exercise/exercise-git
   - file: exercise/exercise-python
+  - file: exercise/exercise-bathymetry
 #  - file: exercise/exercise-cnv
 #  - file: exercise/exercise-tseries
 #  - file: exercise/exercise-filter
