@@ -20,7 +20,7 @@ Click the link to start the assignment.  Here, you may need to create a github a
 
 ## Step 2: Set up your working environment
 
-Refer to instructions from last time (exercise-python)[exercise-python.md] for starting with Git.
+Refer to instructions from last time [exercise-python](exercise-python.md) for starting with Git.
 
 You'll be working with starter code at https://github.com/eleanorfrajka/messfern-plot-bathy.
 
