@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 2 - Plot bathymetry &#8212; messfern-cb</title>
+    <title>Exercise 3 - Plot velocity sections &#8212; messfern-cb</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-bathymetry';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-velocity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 3 - Plot velocity sections" href="exercise-velocity.html" />
-    <link rel="prev" title="Exercise 1 - Plot profiles in python" href="exercise-python.html" />
+    <link rel="next" title="Python installation" href="../resource/python-install.html" />
+    <link rel="prev" title="Exercise 2 - Plot bathymetry" href="exercise-bathymetry.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,8 +182,8 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 1 - Plot profiles in python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2 - Plot bathymetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise-velocity.html">Exercise 3 - Plot velocity sections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-bathymetry.html">Exercise 2 - Plot bathymetry</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 3 - Plot velocity sections</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="nav bd-sidenav">
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/ifmeo-hamburg/messfern-cb/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-bathymetry.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ifmeo-hamburg/messfern-cb/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-velocity.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="../_sources/exercise/exercise-bathymetry.md" target="_blank"
+      <li><a href="../_sources/exercise/exercise-velocity.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +385,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 2 - Plot bathymetry</h1>
+    <h1>Exercise 3 - Plot velocity sections</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,16 +411,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-plot-bathymetry">
-<h1>Exercise 2 - Plot bathymetry<a class="headerlink" href="#exercise-2-plot-bathymetry" title="Link to this heading">#</a></h1>
-<p><strong>Aim:</strong> The purpose of this exercise is to make a map of bathymetry</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-plot-velocity-sections">
+<h1>Exercise 3 - Plot velocity sections<a class="headerlink" href="#exercise-3-plot-velocity-sections" title="Link to this heading">#</a></h1>
+<p><strong>Aim:</strong> The purpose of this exercise is to make a velocity section, as you might do after the Seepraktikum</p>
 <p><strong>Context:</strong> For this course, you can work with python either on your own computer, on the university computers or on Github Codespaces.  (Note, at this point, instructions are not yet verified for using python on the university computers which have recently removed <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>.)</p>
 <p><strong>Goals:</strong> At the end of this exercise, you will be able to</p>
 <ul class="simple">
-<li><p>Load a netCDF (<code class="docutils literal notranslate"><span class="pre">*.nc</span></code>) file with bathymetry data</p></li>
-<li><p>Plot a contour map of bathymetry</p></li>
-<li><p>Download and crop your own bathymetry region given latitude and longitude coordinates</p></li>
-<li><p>Control some figure output parameters (like the size of the figure generated)</p></li>
+<li><p>Load a <code class="docutils literal notranslate"><span class="pre">*.mat</span></code> matlab data file</p></li>
+<li><p>Plot sections of u- and v- velocity</p></li>
+<li><p>Convert time from Matlab format to python <code class="docutils literal notranslate"><span class="pre">xarray</span></code> format</p></li>
+<li><p>Control some figure plotting parameters like double y-axes and changing the position of a colorbar</p></li>
 </ul>
 <hr>
 <section id="step-1-github-com">
@@ -431,28 +431,27 @@ document.write(`
 <section id="step-2-set-up-your-working-environment">
 <h2>Step 2: Set up your working environment<a class="headerlink" href="#step-2-set-up-your-working-environment" title="Link to this heading">#</a></h2>
 <p>Refer to instructions from last time <a class="reference internal" href="exercise-python.html"><span class="std std-doc">exercise-python</span></a> for starting with Git.</p>
-<p>You’ll be working with starter code at <a class="github reference external" href="https://github.com/eleanorfrajka/messfern-plot-bathy">eleanorfrajka/messfern-plot-bathy</a>.</p>
+<p>You’ll be working with starter code at <a class="github reference external" href="https://github.com/eleanorfrajka/messfern-plot-velo">eleanorfrajka/messfern-plot-velo</a>.</p>
 </section>
 <section id="step-3-start-editing-the-code">
 <h2>Step 3: Start editing the code<a class="headerlink" href="#step-3-start-editing-the-code" title="Link to this heading">#</a></h2>
-<p>Note that a jupyter notebook in python is organised in cells.  The cells in this notebook (`<em>.ipynb</em>) are either of type “Markdown” or “code”.</p>
-<ul class="simple">
-<li><p>For Markdown cells, these contain information about the preceding or following cells and use <a class="reference external" href="https://www.markdownguide.org">Markdown</a> to format.  Hashtags are used for headers, and dashes for list items.  To <strong>bold</strong> text, surround the text to be bolded with two asterisks (*) on each side.  For <em>italic</em> text, use one.</p></li>
-<li><p>For code cells, try to figure out what it’s doing.  Python is a programming language (like Matlab or Julia) which allows you to send a set of instructions to the computer, and to have it manipulate and display data to the screen.
-- Syntax matters.  Missing punctuation, change in capitalisation, the wrong kinds of brackets or the wrong indentation all matter.
-- Rather than having you code from scratch to start with (e.g., demonstrating how arithmatic works in Python) we are going to use sample code for you to edit.  The disadvantage is that you may not realise how many choices about punctuation and indentation are being made for you.  The advantage is that you can get to using Python for ‘real stuff’ quicker.  But be aware that you will have gaps in your basic understanding.</p></li>
-</ul>
-<p>To work through this exercise:</p>
 <ol class="arabic simple">
 <li><p>Read each cell and follow the instructions.</p></li>
-<li><p>In the first cell (Exercise 2: Bathymetry), update the text to be your name and date.  You may need to double-click the cell in order to edit.</p></li>
-<li><p>In the next cell, you are importing packages to python.  Note that we are adding packages <code class="docutils literal notranslate"><span class="pre">netCDF4</span></code>, <code class="docutils literal notranslate"><span class="pre">cmocean</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>, so you will need to add these.  We are additionally using a module <code class="docutils literal notranslate"><span class="pre">bathymetry.py</span></code> which you will have downloaded to your computer in step 2.  If you did not, then please download the git repository (Step 2) including the directories.</p></li>
-<li><p>In the third cell (# Set some paths), this cell tells python where various files are located.  Update the <code class="docutils literal notranslate"><span class="pre">rootdir</span></code> to be the root directory (containing the sub-directories or folders <code class="docutils literal notranslate"><span class="pre">src/</span></code> and <code class="docutils literal notranslate"><span class="pre">data/</span></code>) corresponding to this assignment.  The command <code class="docutils literal notranslate"><span class="pre">os.chdir(rootdir)</span></code> changes the python working directory to be this directory.  (Alternative options exist, including adding necessary directories to your path - if you’re a more advanced user, you can choose whichever option you prefer.)</p></li>
-<li><p>The next section loads bathymetry data using <code class="docutils literal notranslate"><span class="pre">xarray</span></code> with the function <code class="docutils literal notranslate"><span class="pre">xr.open_dataset()</span></code>.  Note that we imported <code class="docutils literal notranslate"><span class="pre">xarray</span></code> with short form <code class="docutils literal notranslate"><span class="pre">xr</span></code> above so that we don’t have to type <code class="docutils literal notranslate"><span class="pre">xarray.open_dataset()</span></code>.  The variable inside the brackets or parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> is a character string which tells python where to find the file <code class="docutils literal notranslate"><span class="pre">bathymetry_subset.nc</span></code>.  The <code class="docutils literal notranslate"><span class="pre">print()</span></code> command prints the contents of the variable after loading it.</p></li>
-<li><p>The next section titled “Make a simple plot” shows two examples for making a contour plot in python.  The first uses the common plotting package <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> which we’ve imported as <code class="docutils literal notranslate"><span class="pre">plt</span></code>.  When you run the cell, it should generate a figure below.  The command <code class="docutils literal notranslate"><span class="pre">plt.savefig()</span></code> also creates a <code class="docutils literal notranslate"><span class="pre">*.png</span></code> file with the figure you’ve generated.  Read through the commands, and experiment with commenting them out (add a hashtag <code class="docutils literal notranslate"><span class="pre">#</span></code> at the front of a line) to see how this changes what the figure looks like.</p></li>
-<li><p>The next cell repeats this but uses the package <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>.  Cartopy is particularly good for making geographic maps as you can choose your projection.  Here we’ve chosen the Mercator projection.  The main effect is to adjust the aspect ratio (the ratio of a distance in x vs y) as well as to improve the tick labels to include degrees north and west.</p></li>
-<li><p>Edit the cartopy cell to add some additional features in the plot, and change the display parameter.  The “extra challenge” is to use some additional coding to work with the bathymetry file to find where the depth is deepest, and then plot this on the map.</p></li>
-<li><p><strong>Repeat</strong> but downloading the global bathymetry map (using the <code class="docutils literal notranslate"><span class="pre">bathymetry.py</span></code> module) and then selecting your own region.  Try to pick an interesting location which is less than 1000km on each side, preferably in the aspect ratio of 16:26.</p></li>
+<li><p>In the first cell, update the text to be your name and date.</p></li>
+<li><p>The next cell (the first code cell) imports the packages you need.  You will likely need to add scipy.</p></li>
+<li><p>The next set sets up paths to the directories.  Update these to match your computer.  Reminder that directories on Mac OSX use <code class="docutils literal notranslate"><span class="pre">/</span></code> while directories or folders on Windows use <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p></li>
+<li><p>Load the bathymetry data.  If you don’t remember how to load a <code class="docutils literal notranslate"><span class="pre">*.nc</span></code> or netCDF file, see what we did last time.</p></li>
+<li><p>Load velocity data from a <code class="docutils literal notranslate"><span class="pre">*.mat</span></code> file.  The tricky things here are importing the data (we use <code class="docutils literal notranslate"><span class="pre">scipy.io</span></code>), getting it into the right format (the lines like <code class="docutils literal notranslate"><span class="pre">ds['lat'][0][0]</span></code>), flattening the 2-dimensional data like latitude, longitude, depth and time which are really just 1-dimensional vectors (using <code class="docutils literal notranslate"><span class="pre">*.flatten()</span></code>), converting time from standard matlab time (fractional days since 0000-00-00 at 00:00:00) and then reshaping <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> into two-dimensional matrices or arrays.  <em>Recommended:</em> play around with the code and see how it breaks.  What happens in later cells if you don’t flatten the data?  What happens if you reshape <code class="docutils literal notranslate"><span class="pre">u</span></code> the wrong way around (e.g., <code class="docutils literal notranslate"><span class="pre">time</span></code> before <code class="docutils literal notranslate"><span class="pre">depth</span></code>)?</p></li>
+<li><p>Later cells show how to plot the data.  Special things to note:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">*.twinx()</span></code> to add a second y-axis on a line plot</p></li>
+<li><p>How to fix the y-axis limits afterwards</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p>There is an optional cell showing you how to turn the data you’ve extracted from the matlab file into an xarray dataset, which can then be exported (saved) as a netCDF file.</p></li>
+<li><p>For the map, revisit last time to see how to add bathymetry under the location of the section.</p></li>
+<li><p>The velocity sections are plotted against time.  Extra challenge (but worthwhile!), calculate a distance vector (in units of kilometers) from one end of the section to the other.  Use the Gibbs Seawater toolbox to do this (hint: search gibbs seawater distance function).</p></li>
 </ol>
 </section>
 <section id="step-4-edit-the-readme-file">
@@ -462,7 +461,9 @@ document.write(`
 </section>
 <section id="step-5-submit-the-code-on-the-github-classroom">
 <h2>Step 5: Submit the code on the Github classroom<a class="headerlink" href="#step-5-submit-the-code-on-the-github-classroom" title="Link to this heading">#</a></h2>
-<p>Navigate to your repository on <a class="reference external" href="http://Github.com">Github.com</a>.</p>
+<p>Ok - we haven’t gone over this yet - we may have to wait until 2 weeks from now to try it.  If you have some familiarity with github, you can try to do this yourself.</p>
+<p>–
+Navigate to your repository on <a class="reference external" href="http://Github.com">Github.com</a>.</p>
 <p>If you’re using Github codespace,</p>
 <ul class="simple">
 <li><p>In the left bar, find the circles connected by lines and click it.</p></li>
@@ -506,20 +507,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="exercise-python.html"
+       href="exercise-bathymetry.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exercise 1 - Plot profiles in python</p>
+        <p class="prev-next-title">Exercise 2 - Plot bathymetry</p>
       </div>
     </a>
     <a class="right-next"
-       href="exercise-velocity.html"
+       href="../resource/python-install.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 3 - Plot velocity sections</p>
+        <p class="prev-next-title">Python installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
