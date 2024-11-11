@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 1 - Plot profiles in python &#8212; messfern-cb</title>
+    <title>Exercise 4 - Plot time series data &#8212; messfern-cb</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-python';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-timeseries';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 2 - Plot bathymetry" href="exercise-bathymetry.html" />
-    <link rel="prev" title="Python for Messmethoden" href="../intro.html" />
+    <link rel="next" title="Python installation" href="../resource/python-install.html" />
+    <link rel="prev" title="Exercise 3 - Plot velocity sections" href="exercise-velocity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,10 +181,10 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1 - Plot profiles in python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 1 - Plot profiles in python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-bathymetry.html">Exercise 2 - Plot bathymetry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-velocity.html">Exercise 3 - Plot velocity sections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise-timeseries.html">Exercise 4 - Plot time series data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 4 - Plot time series data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="nav bd-sidenav">
@@ -272,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/ifmeo-hamburg/messfern-cb/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-python.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ifmeo-hamburg/messfern-cb/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-timeseries.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="../_sources/exercise/exercise-python.md" target="_blank"
+      <li><a href="../_sources/exercise/exercise-timeseries.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 1 - Plot profiles in python</h1>
+    <h1>Exercise 4 - Plot time series data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,11 +397,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-github-com">Step 1: Github.com</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-choose-where-to-work-on-the-assignment">Step 2: Choose where to work on the assignment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-work-on-the-assignment-on-your-own-computer">Option 1: Work on the assignment on your own computer.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-github-codespaces">Option 2: Github codespaces</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-set-up-your-working-environment">Step 2: Set up your working environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-start-editing-the-code">Step 3: Start editing the code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-edit-the-readme-file">Step 4: Edit the readme file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-submit-the-code-on-the-github-classroom">Step 5: Submit the code on the Github classroom</a></li>
@@ -416,15 +412,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-plot-profiles-in-python">
-<h1>Exercise 1 - Plot profiles in python<a class="headerlink" href="#exercise-1-plot-profiles-in-python" title="Link to this heading">#</a></h1>
-<p><strong>Aim:</strong> The purpose of this exercise is to get python running.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-4-plot-time-series-data">
+<h1>Exercise 4 - Plot time series data<a class="headerlink" href="#exercise-4-plot-time-series-data" title="Link to this heading">#</a></h1>
+<p><strong>Aim:</strong> The purpose of this exercise is to make time series plots as from a moored instrument.</p>
 <p><strong>Context:</strong> For this course, you can work with python either on your own computer, on the university computers or on Github Codespaces.  (Note, at this point, instructions are not yet verified for using python on the university computers which have recently removed <code class="docutils literal notranslate"><span class="pre">anaconda</span></code>.)</p>
 <p><strong>Goals:</strong> At the end of this exercise, you will be able to</p>
 <ul class="simple">
-<li><p>Run python with jupyter notebooks</p></li>
-<li><p>Load a netCDF (<code class="docutils literal notranslate"><span class="pre">*.nc</span></code>) file with CTD data</p></li>
-<li><p>Plot a profile of temperature and salinity</p></li>
+<li><p>Load a <code class="docutils literal notranslate"><span class="pre">*.nc</span></code> file containing velocity and one containing CTD information</p></li>
+<li><p>Plot time series of salinity and of u- and v- velocity</p></li>
+<li><p>Fit a tidal harmonic to the time series</p></li>
 </ul>
 <hr>
 <section id="step-1-github-com">
@@ -432,91 +428,70 @@ document.write(`
 <p>Access the Github Classroom for this course using the link you received in Stine.</p>
 <p>Click the link to start the assignment.  Here, you may need to create a github account if you don’t already have one, or will link your account to your name.</p>
 </section>
-<section id="step-2-choose-where-to-work-on-the-assignment">
-<h2>Step 2: Choose where to work on the assignment<a class="headerlink" href="#step-2-choose-where-to-work-on-the-assignment" title="Link to this heading">#</a></h2>
-<section id="option-1-work-on-the-assignment-on-your-own-computer">
-<h3>Option 1: Work on the assignment on your own computer.<a class="headerlink" href="#option-1-work-on-the-assignment-on-your-own-computer" title="Link to this heading">#</a></h3>
-<p>Getting started with this option.</p>
-<p>Copy the code from <a class="github reference external" href="https://github.com/eleanorfrajka/messfern-plot-profiles">eleanorfrajka/messfern-plot-profiles</a> to your local computer.  There should be a ‘download’ option if you click the green button that says “&lt;&gt; Code”.  Save it to the directory you’d like to work in.</p>
-<p><em>Advanced:</em> Instead of copying the code, clone it using Github or git, which will create it as a git repository on your computer.</p>
-<p>Then:</p>
-<ul class="simple">
-<li><p>Activate your conda environment (exact steps depend on how you’ll use python: e.g., pycharm, spyder, anaconda)</p></li>
-<li><p>Rename the example notebook in <code class="docutils literal notranslate"><span class="pre">src/</span></code> with your lastname instead of “Lastname”.</p></li>
-<li><p>Start an editor and open the example notebook within <code class="docutils literal notranslate"><span class="pre">src/</span></code></p></li>
-<li><p>Select the kernel with your packages/environment installed</p></li>
-<li><p>Try running the code (normally a “run” button at the top, or to the left of each cell)</p></li>
-</ul>
-</section>
-<section id="option-2-github-codespaces">
-<h3>Option 2: Github codespaces<a class="headerlink" href="#option-2-github-codespaces" title="Link to this heading">#</a></h3>
-<p>Getting started with this option.</p>
-<p>For this option, you will want to start Github codespace within the assignment you’ve accepted.</p>
-<p><strong>First step:</strong> Commit any changes to the repository.</p>
-<p><strong>Second step:</strong> Follow the steps below to run and edit the code.</p>
-<ul class="simple">
-<li><p>Navigate to the python notebook example within <code class="docutils literal notranslate"><span class="pre">src/</span></code>.</p></li>
-<li><p>At the right, choose the kernel.  It may say ‘python’ or ‘kernel’.</p></li>
-<li><p>In the center dropdown, choose “select another kernel”</p></li>
-<li><p>Choose “python environments”</p></li>
-<li><p>Choose “create a python environment”</p></li>
-<li><p>Choose “Conda creates a <code class="docutils literal notranslate"><span class="pre">.conda</span></code> environment in the current workspace”</p></li>
-<li><p>Select the version of python to install: python 3.9. <strong>The first time will take a while since it will try to install packages that you need. Watch the “Go To” button at the top, or the pop up windows in the bottom right.  Check for errors and follow instructions.</strong></p></li>
-<li><p>Try the “Run all” button at the top.  This will throw an error about missing packages.</p></li>
-<li><p>In the terminal window at the bottom of the page, click terminal, and then install the packages.  This can be done one by one or all together, e.g.,
-conda install -c conda-forge matplotlib
-conda install -c conda-forge xarray
-or
-conda install -c conda-forge matplotlib xarray gsw numpy
-etc</p></li>
-</ul>
-<p>Note that the option <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">conda-forge</span></code> tells the installer to look for the packages on the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> (which is needed especially for the gibbs seawater toolbox, <code class="docutils literal notranslate"><span class="pre">gsw</span></code>.)</p>
-<ul class="simple">
-<li><p>In the terminal window, install the package ctd-tools
-pip install ctd-tools</p></li>
-<li><p>Try running the code again</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Note: If you get the error
-notebook controller is DISPOSED.
-View Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details.
-when clicking <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">all</span></code>, try again but running one cell at a time.</p>
-</div>
-</section>
+<section id="step-2-set-up-your-working-environment">
+<h2>Step 2: Set up your working environment<a class="headerlink" href="#step-2-set-up-your-working-environment" title="Link to this heading">#</a></h2>
+<p>Refer to instructions from before <a class="reference internal" href="exercise-python.html"><span class="std std-doc">exercise-python</span></a> for starting with Git.</p>
+<p>You’ll be working with starter code at <a class="github reference external" href="https://github.com/eleanorfrajka/messfern-plot-timeseries">eleanorfrajka/messfern-plot-timeseries</a>.</p>
 </section>
 <section id="step-3-start-editing-the-code">
 <h2>Step 3: Start editing the code<a class="headerlink" href="#step-3-start-editing-the-code" title="Link to this heading">#</a></h2>
-<p>Note that a jupyter notebook in python is organised in cells.  The cells in this notebook (`<em>.ipynb</em>) are either of type “Markdown” or “code”.</p>
-<ul class="simple">
-<li><p>For Markdown cells, these contain information about the preceding or following cells and use <a class="reference external" href="https://www.markdownguide.org">Markdown</a> to format.  Hashtags are used for headers, and dashes for list items.  To <strong>bold</strong> text, surround the text to be bolded with two asterisks (*) on each side.  For <em>italic</em> text, use one.</p></li>
-<li><p>For code cells, try to figure out what it’s doing.  Python is a programming language (like Matlab or Julia) which allows you to send a set of instructions to the computer, and to have it manipulate and display data to the screen.
-- Syntax matters.  Missing punctuation, change in capitalisation, the wrong kinds of brackets or the wrong indentation all matter.
-- Rather than having you code from scratch to start with (e.g., demonstrating how arithmatic works in Python) we are going to use sample code for you to edit.  The disadvantage is that you may not realise how many choices about punctuation and indentation are being made for you.  The advantage is that you can get to using Python for ‘real stuff’ quicker.  But be aware that you will have gaps in your basic understanding.</p></li>
-</ul>
-<p>To work through this exercise:</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>Read each cell and follow the instructions.</p></li>
-<li><p>In the first cell (Exercise 1: Profile data), update the text to be your name and date.  You may need to double-click the cell in order to edit.</p></li>
-<li><p>In the next cell, you are importing packages to python.  You likely do not need to edit this, but note that each package name is imported using the command <code class="docutils literal notranslate"><span class="pre">import</span></code> which then makes the package contents “known” to your python code.</p></li>
-<li><p>In the third cell (# Input file paths), the lines starting with a hash indicate that this is a comment.  Python will not try to execute this line but will instead skip it.  Comments are for the reader/programmer to explain what is happening in the code.  Use them often!</p>
-<p>This cell tells python where various files are located, and saves the text string with that location to a variable name, e.g., <code class="docutils literal notranslate"><span class="pre">cnv_file_with_path</span></code>.  That way, you don’t have to type the long string with the location multiple times.</p>
+<li><p>In the first cell, update the text to be your name and date.</p></li>
+<li><p>The next cell (the first code cell) imports the packages you need.  You will likely need to add scipy.</p></li>
+<li><p>The next set sets up paths to the directories.  Update these to match your computer.  Reminder that directories on Mac OSX use <code class="docutils literal notranslate"><span class="pre">/</span></code> while directories or folders on Windows use <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p></li>
+<li><p>Load the CTD data.  Here, <code class="docutils literal notranslate"><span class="pre">xr.open_dataset()</span></code> is handy for handling <code class="docutils literal notranslate"><span class="pre">*.nc</span></code> netCDF files.</p></li>
+<li><p>Make a simple plot of practical salinity.  Recall that for archiving data, we use practical salinity (<code class="docutils literal notranslate"><span class="pre">.PSAL</span></code> in this file) to record salinity, even though “absolute salinity” is what we should use for onward calculations.</p></li>
+<li><p>Compute and plot absolute salinity, using the Gibbs Seawater toolbox <code class="docutils literal notranslate"><span class="pre">gsw</span></code>.  Take a look at how much they differ.</p>
+<ul class="simple">
+<li><p>Calculate the difference and plot it.</p></li>
+</ul>
 </li>
-<li><p>The next section is titled “Transforming to xarray”.  This reads the data from the native format provided by the manufacturer (in the case, Seabird Electronics, Inc) and converts it into a netCDF file (a common data format used in oceanography and climate science) using a package written by a UHH student Yves Sorge.</p></li>
-<li><p>The section “Open file and show contents” then reads this netCDF data into a data type within Python called an <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataset.  This data type is enabled by you having loaded the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package a few cells above, and has the advantage of reading netCDF files easily, and preserving the information contained within the file (which includes data variables, meta data).  The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> package also has useful features for working with e.g., 1-, 2-, 3-, and 4-dimensional datasets, especially ones which use time as an index.</p>
-<p>Note the line: <code class="docutils literal notranslate"><span class="pre">print(ctd_ds.info)</span></code> which prints to the screen some fo the data contained within the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataset which we’ve named here as <code class="docutils literal notranslate"><span class="pre">ctd_ds</span></code>.</p>
+<li><p>There are strong tides in the North Sea region.  In order to fit a tidal signal neatly, we will convert the time format from <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code> into a numeric value with units of days.  There are two lines of code in here, one to create <code class="docutils literal notranslate"><span class="pre">time_in_days1</span></code> and one to create <code class="docutils literal notranslate"><span class="pre">time_in_days2</span></code>.  From reading the line of code, it would appear that either should give us time in units of days.  Only one of them is correct.  The other produces an unfavourable rounding effect, so that fractional days get assigned the equivalent of midnight.  Take a look at these to find out what is going wrong.</p></li>
+<li><p>Now we’ll fit a cosine with a period of 12.42 hours (the M2 semi-diurnal tide) to the data.  The plot automatically generated shows the original data and the best fit of a harmonic.  Read the function definition (starting with <code class="docutils literal notranslate"><span class="pre">def</span></code> and including all lines of code which are indented).  Can you figure out what it’s doing, and what values it will return?</p>
+<ul class="simple">
+<li><p>Take the difference to compute the residual.  Plot the residual</p></li>
+</ul>
 </li>
-<li><p>The code below goes through some basic plotting routines.  <strong>Your task</strong> is to edit this code according to the instructions, to get familiar with the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package.  To figure out how to do this, refer to the <a class="reference external" href="https://matplotlib.org/stable/gallery/index">Matplotlib website</a> and use internet searches or your colleagues.</p></li>
+<li><p>Working with velocity.  The first cell loads the data and plots the U, V and W velocity.</p>
+<ul class="simple">
+<li><p>What can you say about the relative magnitudes of velocity in these three directions?</p></li>
+</ul>
+</li>
+<li><p>Fit a cosine to the U and V velocity.  Again, we have to manipulate the time vector to work with this function.</p></li>
 </ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- What happens if you omit (comment out) the lines of code starting with `finite_indices_uvel`?  Does the code break?  Can you read the error message to understand why?
+- We&#39;ve imported `curve_fit` from `scipy.optimize`.  Google this function to read about how it works.
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Plot a tidal ellipse.  This is plotting the u and v velocities on an axis.</p>
+<ul class="simple">
+<li><p>Reading the ellipse, can you determine the main direction of fluctuations of the tidal currents?  The secondary direction?</p></li>
+<li><p>Plot the original data as points on the same axes.</p></li>
+</ul>
+</li>
+<li><p>Sometimes we are not interested in high frequency fluctuations.  To remove them, we can apply a lowpass filter, which allows low frequency variability to “pass through” but blocks the high frequency.  A simple way to do this is by using a moving average, sometimes called a “boxcar filter” or filtering with a “boxcar window” or “rectangular window”.   The next section of code verifies that a 1-day rolling mean or moving average produces the save average for a single day (2024-05-22) as averaging together all values from 2024-05-22.</p></li>
+<li><p>The remaining code is optional, but you can work through it and try various options to see what the result is on the original data.</p></li>
+</ol>
+<p>After getting through step 13, choose 4 figures to export showing details about:</p>
+<ul class="simple">
+<li><p>The cosine fit to the CTD data and residuals</p></li>
+<li><p>The cosine fit to the velocity data and the residuals</p></li>
+<li><p>The effect of filtering a time series</p></li>
+<li><p>The ellipse</p></li>
+</ul>
 </section>
 <section id="step-4-edit-the-readme-file">
 <h2>Step 4: Edit the readme file<a class="headerlink" href="#step-4-edit-the-readme-file" title="Link to this heading">#</a></h2>
-<p>Within your Github Classroom workspace, you’ll find a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.  Open this file in a text editor (or code editor) of your choice.  It’s written in markdown.  Follow the instructions within the file to update the file with your project name, notes to yourself on how you ran the code, and any further information as required.</p>
+<p>Within your workspace, you’ll find a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.  Open this file in a text editor (or code editor) of your choice.  It’s written in markdown.  Follow the instructions within the file to update the file with your project name, notes to yourself on how you ran the code, and any further information as required.</p>
 <p>For the purposes of this exercise, the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file serves as a coversheet for the work.</p>
 </section>
 <section id="step-5-submit-the-code-on-the-github-classroom">
 <h2>Step 5: Submit the code on the Github classroom<a class="headerlink" href="#step-5-submit-the-code-on-the-github-classroom" title="Link to this heading">#</a></h2>
-<p>Navigate to your repository on <a class="reference external" href="http://Github.com">Github.com</a>.</p>
+<p>Ok - we haven’t gone over this yet - we may have to wait until 2 weeks from now to try it.  If you have some familiarity with github, you can try to do this yourself.</p>
+<p>–
+Navigate to your repository on <a class="reference external" href="http://Github.com">Github.com</a>.</p>
 <p>If you’re using Github codespace,</p>
 <ul class="simple">
 <li><p>In the left bar, find the circles connected by lines and click it.</p></li>
@@ -560,20 +535,20 @@ when clicking <code class="docutils literal notranslate"><span class="pre">Run</
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="exercise-velocity.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python for Messmethoden</p>
+        <p class="prev-next-title">Exercise 3 - Plot velocity sections</p>
       </div>
     </a>
     <a class="right-next"
-       href="exercise-bathymetry.html"
+       href="../resource/python-install.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 2 - Plot bathymetry</p>
+        <p class="prev-next-title">Python installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -594,11 +569,7 @@ when clicking <code class="docutils literal notranslate"><span class="pre">Run</
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-github-com">Step 1: Github.com</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-choose-where-to-work-on-the-assignment">Step 2: Choose where to work on the assignment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-work-on-the-assignment-on-your-own-computer">Option 1: Work on the assignment on your own computer.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-github-codespaces">Option 2: Github codespaces</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-set-up-your-working-environment">Step 2: Set up your working environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-start-editing-the-code">Step 3: Start editing the code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-edit-the-readme-file">Step 4: Edit the readme file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-submit-the-code-on-the-github-classroom">Step 5: Submit the code on the Github classroom</a></li>
