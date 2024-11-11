@@ -10,6 +10,7 @@ parts:
   - file: exercise/exercise-python
   - file: exercise/exercise-bathymetry
   - file: exercise/exercise-velocity
+  - file: exercise/exercise-timeseries
 #  - file: exercise/exercise-cnv
 #  - file: exercise/exercise-tseries
 #  - file: exercise/exercise-filter
